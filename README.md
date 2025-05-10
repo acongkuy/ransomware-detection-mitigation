@@ -11,6 +11,7 @@ Program ini dapat dijalankan di berbagai sistem operasi, termasuk **Linux**, **m
 - Memantau **proses** yang mencurigakan yang dapat terkait dengan ransomware.
 - **Menghentikan proses ransomware** yang terdeteksi secara otomatis.
 - **Pemberitahuan** jika file penting diubah atau hilang.
+- **Input interaktif** untuk memasukkan direktori yang dipantau dan file penting yang ingin dilindungi.
 
 ## Prasyarat
 Skrip ini memerlukan **Python 3** dan dua modul Python eksternal:
@@ -23,7 +24,7 @@ Skrip ini memerlukan **Python 3** dan dua modul Python eksternal:
 Pertama, clone repository ini ke mesin lokal Anda:
 ```bash
 git clone https://github.com/acongkuy/ransomware-detection-mitigation
-cd repo-name
+cd mitigation
 ````
 
 ### 2. Membuat Virtual Environment (Opsional, tapi disarankan)
@@ -80,7 +81,7 @@ Setelah dependensi terinstal, Anda dapat menjalankan skrip dengan perintah berik
 python3 mitigation.py
 ```
 
-Program akan meminta Anda untuk memasukkan **path folder** yang ingin dipantau untuk mendeteksi ransomware.
+Skrip akan meminta Anda untuk memasukkan **path folder** yang ingin dipantau dan **file-file penting** yang ingin dilindungi secara interaktif.
 
 ### 6. Menonaktifkan Virtual Environment
 
@@ -92,7 +93,20 @@ deactivate
 
 ## Konfigurasi
 
-Pada awal skrip, Anda akan diminta untuk memasukkan path direktori yang ingin dipantau. Anda bisa mengubah **path ke file penting** yang ingin dilindungi di bagian awal skrip sesuai kebutuhan Anda.
+Pada saat menjalankan skrip, Anda akan diminta untuk memasukkan:
+
+1. **Path direktori** yang ingin dipantau untuk mendeteksi ransomware.
+2. **Path file penting** yang ingin Anda lindungi. Anda dapat memasukkan beberapa file penting dengan mengetikkan path file satu per satu.
+
+Contoh penggunaan input interaktif:
+
+```
+Enter the path to monitor (e.g., /home/user): /home/user
+Please enter the paths to the important files you want to protect:
+Enter an important file path (or type 'done' to finish): /home/user/Documents/important_file.txt
+Enter an important file path (or type 'done' to finish): /home/user/important_data.xlsx
+Enter an important file path (or type 'done' to finish): done
+```
 
 ### Sistem yang Didukung
 
@@ -153,11 +167,11 @@ Skrip ini dilisensikan di bawah lisensi MIT. Anda bebas menggunakan dan memodifi
 ```
 
 ### Penjelasan:
-- **Instalasi dan Penggunaan**: Langkah-langkah terperinci untuk menginstal dependensi, menjalankan skrip, dan menggunakan virtual environment.
-- **Konfigurasi**: Menyediakan penjelasan mengenai bagaimana cara mengonfigurasi skrip agar sesuai dengan kebutuhan spesifik Anda (seperti memilih folder yang dipantau).
-- **Troubleshooting**: Panduan untuk menangani beberapa masalah umum, seperti kesalahan modul yang tidak ditemukan atau skrip yang berhenti saat terminal ditutup.
-- **Sistem yang Didukung**: Memberikan gambaran tentang platform yang kompatibel dengan skrip ini.
-- **Lisensi**: Memberikan lisensi yang sesuai (MIT) untuk penggunaan skrip.
+1. **Instalasi dan Penggunaan**: Langkah-langkah terperinci untuk menginstal dependensi, menjalankan skrip, dan menggunakan virtual environment.
+2. **Konfigurasi**: Menyediakan penjelasan mengenai bagaimana cara mengonfigurasi skrip agar sesuai dengan kebutuhan spesifik Anda (seperti memilih folder yang dipantau).
+3. **Troubleshooting**: Panduan untuk menangani beberapa masalah umum, seperti kesalahan modul yang tidak ditemukan atau skrip yang berhenti saat terminal ditutup.
+4. **Sistem yang Didukung**: Memberikan gambaran tentang platform yang kompatibel dengan skrip ini.
+5. **Lisensi**: Memberikan lisensi yang sesuai (MIT) untuk penggunaan skrip.
 
 ### Cara Menggunakan File `README.md`:
 1. Salin file `README.md` ini ke direktori root repository GitHub Anda.
