@@ -22,7 +22,7 @@ Skrip ini memerlukan **Python 3** dan dua modul Python eksternal:
 ### 1. Clone Repository
 Pertama, clone repository ini ke mesin lokal Anda:
 ```bash
-git clone https://github.com/username/repo-name.git
+git clone https://github.com/acongkuy/ransomware-detection-mitigation
 cd repo-name
 ````
 
